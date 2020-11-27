@@ -34,5 +34,13 @@ async function queryApps (freeText, birthYear, preferredCategories, minAppRating
     return true
   })
 
-  return filteredApps
+  return filteredApps.map(app => {
+    return {
+      icon: app.icon,
+      name: app.name,
+      category: app.category,
+      rating: app.rating,
+      min_age: app.min_age
+    }
+  })
 }

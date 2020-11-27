@@ -8,6 +8,6 @@ async function getCategories (req, res) {
     const categories = await fsextra.readJSON(path.join(__dirname, '../../../data/categories.json'))
     res.json(categories.sort())
   } catch (err) {
-    console.log(err)
+    console.log(`Error occured in 'getCategories' '${err}'`)
   }
 }

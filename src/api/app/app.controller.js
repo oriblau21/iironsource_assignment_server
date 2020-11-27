@@ -15,7 +15,7 @@ async function getApps (req, res) {
     const filtredApps = await queryApps(freeText, birthYear, preferredCategories, minAppRating)
     res.json(filtredApps)
   } catch (err) {
-    console.log(err)
+    console.log(`Error occured in 'getApps' '${err}'`)
     res.status(500).send({
       message: 'Error occured during filtering apps'
     })
